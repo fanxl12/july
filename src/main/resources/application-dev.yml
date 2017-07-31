@@ -1,0 +1,10 @@
+server:
+  port: 8090
+spring:
+  datasource:
+    name: july
+    url: jdbc:mysql://localhost/july?useUnicode=true&allowMultiQueries=true&characterEncoding=utf-8&&autoReconnect=true
+    username: root
+    password: fxl123
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
