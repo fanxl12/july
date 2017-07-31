@@ -16,9 +16,9 @@ import java.util.Map;
 @Controller
 public class LoginController {
 
-    @GetMapping("/login1")
+    @GetMapping("/login")
     public ModelAndView login1(){
-        ModelAndView mv = new ModelAndView("user/login1");
+        ModelAndView mv = new ModelAndView("user/login");
         mv.addObject("dateVar", new Date(new java.util.Date().getTime()));
         mv.addObject("name", "这个是测试文字");
         mv.addObject("isGirl", true);
@@ -37,5 +37,15 @@ public class LoginController {
         map.put("mysql", "你好mysql");
         mv.addObject("map", map);
         return mv;
+    }
+
+    @GetMapping("/index")
+    public String index(){
+        return "user/index";
+    }
+
+    @GetMapping("/info")
+    public String info(){
+        return "user/info";
     }
 }

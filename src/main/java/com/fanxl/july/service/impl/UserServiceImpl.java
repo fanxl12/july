@@ -6,6 +6,7 @@ import com.fanxl.july.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
@@ -27,5 +28,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean create(User user) {
         return userDao.create(user)>0;
+    }
+
+    @Override
+    public User getByName(String name) {
+
+        Example example = new Example(User.class);
+        example.createCriteria().andEqualTo("name", name);
+
+        List<User> userList = userDao.selectByExample(example);
+        if (userList==null || userList.size()==0)return null;
+        return userList.get(0);
     }
 }

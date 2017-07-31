@@ -14,4 +14,6 @@ public interface UserService {
 
     boolean create(User user);
 
+    User getByName(String name);
+
 }

@@ -9,6 +9,8 @@ public class User {
     private String name;
     private String password;
 
+    private String salt;
+
     public Integer getId() {
         return id;
     }
@@ -31,5 +33,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
     }
 }
